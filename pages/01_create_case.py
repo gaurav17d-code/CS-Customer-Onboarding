@@ -107,9 +107,9 @@ if submitted:
             "remarks": remarks.strip(),
         }
 
-        new_case_id = str(uuid.uuid4())[:8]        case_id = create_case(
-                    case_id = create_case(
-                case_id=new_case_id,
+        new_case_id = str(uuid.uuid4())[:8]
+          case_id = create_case(
+                    case_id=new_case_id,
                 product_type=product_type,
                 customer_name=customer_name.strip(),
                 sales_officer=metadata.get("contact_person", "").strip(),
