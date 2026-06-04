@@ -195,3 +195,7 @@ def validate_format(value: str, field_name: str, format_rules: dict) -> tuple:
     if match:
         return True, 'Valid'
     return False, f'Does not match expected format for {field_name}'
+
+
+# Function alias for compatibility with pages
+extract_fields = extract_fields_from_page
