@@ -289,6 +289,7 @@ def get_case_stats(case_id):
 get_case_by_id = get_case
 # get_all_cases already exists, no alias needed
 get_documents_by_case = get_documents
+add_document = save_document
 # update_case_status already exists, no alias needed
 get_audit_log = get_audit
 get_db_connection = get_conn
