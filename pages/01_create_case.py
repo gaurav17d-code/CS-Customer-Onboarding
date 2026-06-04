@@ -121,10 +121,9 @@ if submitted:
         operator = st.session_state.get("username", "system")
         log_audit(
             case_id=case_id,
-            )
-            action="CASE_CREATED",
-            performed_by=operator,
-            details=f"Product: {product_type} | Category: {customer_category}",
+                action="CASE_CREATED",
+                performed_by=operator,
+                details=f"Product: {product_type} | Category: {customer_category}",
         )
 
         st.success(
