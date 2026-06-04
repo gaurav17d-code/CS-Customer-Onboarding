@@ -206,3 +206,7 @@ def highlight_region_on_image(img: Image.Image, x1: int, y1: int,
         return Image.fromarray(img_arr)
     except Exception:
         return img
+
+
+# Function alias for compatibility with pages
+extract_text_from_file = process_uploaded_file
