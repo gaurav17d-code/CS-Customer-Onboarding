@@ -168,3 +168,6 @@ def get_checklist_items_for_product(product_type: str) -> list:
     for i in product_rules.get('conditional', []):
         items.append({**i, 'mandatory': False})
     return items
+
+# Function alias for compatibility with pages
+validate_checklist = update_checklist_from_documents
