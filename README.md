@@ -196,6 +196,38 @@ Maps extracted fields to CMR Excel columns:
 
 ## Deployment Notes
 
+### Deploy on Render.com (Recommended)
+
+Render.com offers free hosting for Streamlit applications with better stability than Streamlit Community Cloud.
+
+1. **Sign up** at [render.com](https://render.com) (no credit card required)
+2. Click **New +** → **Web Service**
+3. Connect your GitHub account and select this repository
+4. Configure the service:
+   - **Name**: Choose a unique name (e.g., `cs-customer-onboarding`)
+   - **Environment**: `Python 3`
+   - **Region**: Choose closest to you
+   - **Branch**: `main`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `streamlit run app.py --server.port=$PORT --server.address=0.0.0.0`
+   - **Instance Type**: Select **Free**
+5. Click **Create Web Service**
+6. Wait 3-5 minutes for deployment to complete
+7. Access your app at the generated URL (e.g., `https://cs-customer-onboarding.onrender.com`)
+
+### Deploy on Streamlit Community Cloud (Alternative)
+
+1. **Fork** this repository to your GitHub account
+2. Sign in to [share.streamlit.io](https://share.streamlit.io)
+3. Click **New app** and select:
+   - Repository: `your-username/CS-Customer-Onboarding`
+   - Branch: `main`  
+   - Main file path: `app.py`
+4. Click **Deploy**
+5. Your app will be live at `https://share.streamlit.io/your-username/cs-customer-onboarding`
+
+**Note**: Streamlit Community Cloud may experience caching issues. If you encounter import errors after deployment, try the Render.com option above.
+
 ### Performance
 - **Target**: 2-5 minutes processing time for a typical case (5-10 documents)
 - **Hardware**: Commodity server (4 CPU cores, 8GB RAM)
