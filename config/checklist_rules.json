@@ -1,0 +1,64 @@
+{
+  "Bitumen": {
+    "mandatory": [
+      {"item": "GST Certificate", "doc_type": "gst_certificate"},
+      {"item": "GST Annexure", "doc_type": "gst_annexure"},
+      {"item": "PAN", "doc_type": "pan"},
+      {"item": "Work Order", "doc_type": "work_order"},
+      {"item": "TDS/TCS Declaration", "doc_type": "tds_tcs_declaration"},
+      {"item": "Cancelled Cheque", "doc_type": "cancelled_cheque"}
+    ],
+    "conditional": [
+      {"item": "TAN Copy", "doc_type": "tan", "condition": "tds_applicable", "condition_label": "TDS Applicable"},
+      {"item": "CIN / Certificate of Incorporation", "doc_type": "cin", "condition": "is_company", "condition_label": "Is Company"},
+      {"item": "Transport Licence", "doc_type": "transport_licence", "condition": "transport_applicable", "condition_label": "Transport Applicable"}
+    ]
+  },
+  "Sulphur": {
+    "mandatory": [
+      {"item": "GST Certificate", "doc_type": "gst_certificate"},
+      {"item": "GST Annexure", "doc_type": "gst_annexure"},
+      {"item": "PAN", "doc_type": "pan"},
+      {"item": "TDS/TCS Declaration", "doc_type": "tds_tcs_declaration"},
+      {"item": "Cancelled Cheque", "doc_type": "cancelled_cheque"},
+      {"item": "Storage Licence", "doc_type": "storage_licence"},
+      {"item": "NOC", "doc_type": "noc"}
+    ],
+    "conditional": [
+      {"item": "TAN Copy", "doc_type": "tan", "condition": "tds_applicable", "condition_label": "TDS Applicable"},
+      {"item": "CIN / Certificate of Incorporation", "doc_type": "cin", "condition": "is_company", "condition_label": "Is Company"},
+      {"item": "Transport Licence", "doc_type": "transport_licence", "condition": "transport_applicable", "condition_label": "Transport Applicable"}
+    ]
+  },
+  "HSD": {
+    "mandatory": [
+      {"item": "GST Certificate", "doc_type": "gst_certificate"},
+      {"item": "GST Annexure", "doc_type": "gst_annexure"},
+      {"item": "PAN", "doc_type": "pan"},
+      {"item": "TDS/TCS Declaration", "doc_type": "tds_tcs_declaration"},
+      {"item": "Cancelled Cheque", "doc_type": "cancelled_cheque"},
+      {"item": "Storage Licence", "doc_type": "storage_licence"}
+    ],
+    "conditional": [
+      {"item": "TAN Copy", "doc_type": "tan", "condition": "tds_applicable", "condition_label": "TDS Applicable"},
+      {"item": "CIN / Certificate of Incorporation", "doc_type": "cin", "condition": "is_company", "condition_label": "Is Company"},
+      {"item": "Transport Licence", "doc_type": "transport_licence", "condition": "transport_applicable", "condition_label": "Transport Applicable"}
+    ]
+  },
+  "SEZ": {
+    "mandatory": [
+      {"item": "GST Certificate", "doc_type": "gst_certificate"},
+      {"item": "GST Annexure", "doc_type": "gst_annexure"},
+      {"item": "PAN", "doc_type": "pan"},
+      {"item": "TDS/TCS Declaration", "doc_type": "tds_tcs_declaration"},
+      {"item": "Cancelled Cheque", "doc_type": "cancelled_cheque"},
+      {"item": "Storage Licence", "doc_type": "storage_licence"},
+      {"item": "End User Certificate", "doc_type": "end_user_certificate"}
+    ],
+    "conditional": [
+      {"item": "TAN Copy", "doc_type": "tan", "condition": "tds_applicable", "condition_label": "TDS Applicable"},
+      {"item": "CIN / Certificate of Incorporation", "doc_type": "cin", "condition": "is_company", "condition_label": "Is Company"},
+      {"item": "Transport Licence", "doc_type": "transport_licence", "condition": "transport_applicable", "condition_label": "Transport Applicable"}
+    ]
+  }
+}
