@@ -1,0 +1,43 @@
+{
+  "field_mappings": [
+    {"canonical": "customer_name", "cmr_label": "Name of the Customer", "cmr_cell": "C5", "sources": ["gst_certificate", "cin", "pan", "tan", "aadhaar", "cancelled_cheque"], "precedence": ["gst_certificate", "cin", "pan", "tan", "aadhaar", "cancelled_cheque"]},
+    {"canonical": "gst_no", "cmr_label": "GST No.", "cmr_cell": "C6", "sources": ["gst_certificate"], "precedence": ["gst_certificate"]},
+    {"canonical": "pan_no", "cmr_label": "PAN No.", "cmr_cell": "C7", "sources": ["pan"], "precedence": ["pan"]},
+    {"canonical": "tan_no", "cmr_label": "TAN Number", "cmr_cell": "C8", "sources": ["tan", "tds_tcs_declaration"], "precedence": ["tan"]},
+    {"canonical": "cin_no", "cmr_label": "CIN No.", "cmr_cell": "C9", "sources": ["cin"], "precedence": ["cin"]},
+    {"canonical": "account_number", "cmr_label": "Bank A/C No.", "cmr_cell": "C10", "sources": ["cancelled_cheque"], "precedence": ["cancelled_cheque"]},
+    {"canonical": "ifsc_code", "cmr_label": "IFSC Code", "cmr_cell": "C11", "sources": ["cancelled_cheque"], "precedence": ["cancelled_cheque"]},
+    {"canonical": "bank_name", "cmr_label": "Bank Name", "cmr_cell": "C12", "sources": ["cancelled_cheque"], "precedence": ["cancelled_cheque"]},
+    {"canonical": "state", "cmr_label": "State", "cmr_cell": "C13", "sources": ["gst_certificate"], "precedence": ["gst_certificate"]},
+    {"canonical": "address", "cmr_label": "Address", "cmr_cell": "C14", "sources": ["gst_certificate", "aadhaar"], "precedence": ["gst_certificate"]},
+    {"canonical": "contact_name", "cmr_label": "Contact Name", "cmr_cell": "C15", "sources": ["manual"], "precedence": ["manual"]},
+    {"canonical": "mobile", "cmr_label": "Mobile", "cmr_cell": "C16", "sources": ["manual"], "precedence": ["manual"]},
+    {"canonical": "email", "cmr_label": "Mail ID", "cmr_cell": "C17", "sources": ["manual"], "precedence": ["manual"]},
+    {"canonical": "legal_status", "cmr_label": "Legal Status", "cmr_cell": "C18", "sources": ["manual"], "precedence": ["manual"], "master_values": ["PV - Private Sector", "GO - Government", "PS - Public Sector", "CO - Cooperative"]},
+    {"canonical": "payment_mode", "cmr_label": "Payment Mode", "cmr_cell": "C19", "sources": ["manual"], "precedence": ["manual"], "master_values": ["RTGS", "NEFT", "Cheque", "DD", "Cash"]},
+    {"canonical": "payment_terms", "cmr_label": "Payment Terms", "cmr_cell": "C20", "sources": ["manual"], "precedence": ["manual"], "master_values": ["100% Advance", "Against Delivery", "30 Days Credit", "60 Days Credit"]},
+    {"canonical": "tax_category", "cmr_label": "Tax Category", "cmr_cell": "C21", "sources": ["gst_certificate"], "precedence": ["gst_certificate"], "master_values": ["GST Applicable", "Exempt", "Non-GST"]},
+    {"canonical": "gst_registration_type", "cmr_label": "Type of Registration", "cmr_cell": "C22", "sources": ["gst_certificate"], "precedence": ["gst_certificate"], "master_values": ["Regular", "Composition", "URP - Unregistered", "SEZ"]},
+    {"canonical": "customer_classification", "cmr_label": "Customer Classification", "cmr_cell": "C23", "sources": ["manual"], "precedence": ["manual"], "master_values": ["Retail", "Industrial", "Government", "Institutional", "Export"]},
+    {"canonical": "industry_type", "cmr_label": "Industry Type", "cmr_cell": "C24", "sources": ["manual"], "precedence": ["manual"], "master_values": ["Construction", "Manufacturing", "Logistics", "Agriculture", "Mining", "Power", "Chemical", "Other"]},
+    {"canonical": "sales_officer", "cmr_label": "Sales Officer", "cmr_cell": "C25", "sources": ["case_metadata"], "precedence": ["case_metadata"]},
+    {"canonical": "sales_area", "cmr_label": "Sales Area", "cmr_cell": "C26", "sources": ["case_metadata"], "precedence": ["case_metadata"]},
+    {"canonical": "product", "cmr_label": "Product", "cmr_cell": "C27", "sources": ["case_metadata"], "precedence": ["case_metadata"]},
+    {"canonical": "regional_office", "cmr_label": "Regional Office", "cmr_cell": "C28", "sources": ["case_metadata"], "precedence": ["case_metadata"]}
+  ],
+  "confidence_thresholds": {
+    "auto_approve": 0.90,
+    "review_required": 0.70,
+    "low_confidence": 0.50
+  },
+  "format_validations": {
+    "pan_no": "^[A-Z]{5}[0-9]{4}[A-Z]{1}$",
+    "tan_no": "^[A-Z]{4}[0-9]{5}[A-Z]{1}$",
+    "gst_no": "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$",
+    "cin_no": "^[LUu][0-9]{5}[A-Z]{2}[0-9]{4}[A-Z]{3}[0-9]{6}$",
+    "ifsc_code": "^[A-Z]{4}0[A-Z0-9]{6}$",
+    "account_number": "^[0-9]{9,18}$",
+    "mobile": "^[6-9][0-9]{9}$",
+    "email": "^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$"
+  }
+}
