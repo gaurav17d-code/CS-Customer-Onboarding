@@ -287,8 +287,8 @@ def get_case_stats(case_id):
 
 # Function aliases for compatibility with pages
 get_case_by_id = get_case
-get_all_cases = get_all_case
-get_documents_by_case = get_uploaded_docs
-update_case_status = update_status
+# get_all_cases already exists, no alias needed
+get_documents_by_case = get_documents
+# update_case_status already exists, no alias needed
 get_audit_log = get_audit
 get_db_connection = get_conn
