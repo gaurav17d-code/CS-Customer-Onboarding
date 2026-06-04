@@ -116,7 +116,7 @@ if submitted:
                 sales_area=metadata.get("delivery_location", "").strip(),
                 regional_office=metadata.get("state", "").strip(),
                 remarks=remarks.strip(),
-                created_by="admin"
+                created_by="admin")
 
         operator = st.session_state.get("username", "system")
         log_audit(
