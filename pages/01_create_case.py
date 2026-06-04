@@ -6,6 +6,7 @@ from database import (
     log_audit, get_db_connection
 )
 import json
+import uuid
 
 st.set_page_config(page_title="Create Case", page_icon="📋", layout="wide")
 
@@ -106,11 +107,16 @@ if submitted:
             "remarks": remarks.strip(),
         }
 
-        case_id = create_case(
-            customer_name=customer_name.strip(),
-            product_type=product_type,
-            metadata=metadata,
-        )
+        case_id = create_case(new_case_id = str(uuid.uuid4())[:8]
+            case_id = create_case(
+                case_id=new_case_id,
+                product_type=product_type,
+                customer_name=customer_name.strip(),
+                sales_officer=metadata.get("contact_person", "").strip(),
+                sales_area=metadata.get("delivery_location", "").strip(),
+                regional_office=metadata.get("state", "").strip(),
+                remarks=remarks.strip(),
+                created_by="admin"
 
         operator = st.session_state.get("username", "system")
         log_audit(
