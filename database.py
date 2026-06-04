@@ -283,3 +283,12 @@ def get_case_stats(case_id):
     pending = conn.execute("SELECT COUNT(*) as c FROM extracted_field WHERE case_id=? AND review_status='pending'", (case_id,)).fetchone()['c']
     conn.close()
     return {'docs': docs, 'missing': missing, 'mismatches': mismatches, 'pending': pending}
+
+
+# Function aliases for compatibility with pages
+get_case_by_id = get_case
+get_all_cases = get_all_case
+get_documents_by_case = get_uploaded_docs
+update_case_status = update_status
+get_audit_log = get_audit
+get_db_connection = get_conn
