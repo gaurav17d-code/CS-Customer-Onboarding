@@ -161,17 +161,15 @@ with right_col:
         update_document_field(doc["doc_id"], "extracted_fields", updated_fields)
         update_document_field(doc["doc_id"], "status", review_status)
         if review_status == "Rejected":
-            update_document_field(doc["doc_id"], "rejection_reason", rejection_reason)
-
-                    log_audit(
+                            update_document_field(doc["doc_id"], "rejection_reason", rejection_reason)
+            log_audit(
                 case_id=case_id,
                 event_type="DOCUMENT_REVIEWED",
                 actor_id=st.session_state.get("username", "system"),
                 old_val="",
                 new_val="",
                 comment=f"doc_id={doc['doc_id']} | status={review_status}"
-            )
-        st.success(f"✅ Document {doc['doc_id']} updated successfully.")
+            )uccess(f"✅ Document {doc['doc_id']} updated successfully.")
         st.rerun()
 
 st.markdown("---")
@@ -182,15 +180,15 @@ all_approved = all(d.get("status") == "Approved" for d in docs)
 if all_approved and not missing_items:
     if st.button("🚀 Mark Case as Complete", use_container_width=True):
         update_case_status(case_id, "Complete")
-                    log_audit(
+            log_audit(
                 case_id=case_id,
                 event_type="CASE_COMPLETED",
                 actor_id=st.session_state.get("username", "system"),
                 old_val="",
                 new_val="",
                 comment="All documents approved and checklist satisfied."
-            )
-        st.success("✅ Case marked as Complete. Proceed to CMR Generation.")
+            )        
+                        st.success("✅ Case marked as Complete. Proceed to CMR Generation.")
         st.balloons()
 else:
     st.info("⚠️ All documents must be approved and checklist satisfied before completing the case.")
