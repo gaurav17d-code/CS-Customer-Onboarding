@@ -119,7 +119,7 @@ if submitted:
                 created_by="admin")
 
         operator = st.session_state.get("username", "system")
-                    log_audit(
+        log_audit(
                 case_id=case_id,
                 event_type="CASE_CREATED",
                 actor_id=operator,
