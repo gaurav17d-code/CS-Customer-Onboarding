@@ -169,9 +169,9 @@ with right_col:
                 old_val="",
                 new_val="",
                 comment=f"doc_id={doc['doc_id']} | status={review_status}"
-            )uccess(f"✅ Document {doc['doc_id']} updated successfully.")
-        st.rerun()
-
+            )
+            st.success(f"✅ Document {doc['doc_id']} updated successfully.")
+            st.rerun()
 st.markdown("---")
 
 # ── Case-level approval ───────────────────────────────────────────────────────────
@@ -187,8 +187,8 @@ if all_approved and not missing_items:
                 old_val="",
                 new_val="",
                 comment="All documents approved and checklist satisfied."
-            )        
-                        st.success("✅ Case marked as Complete. Proceed to CMR Generation.")
-        st.balloons()
+            )
+            st.success("✅ Case marked as Complete. Proceed to CMR Generation.")
+            st.balloons()        
 else:
     st.info("⚠️ All documents must be approved and checklist satisfied before completing the case.")
