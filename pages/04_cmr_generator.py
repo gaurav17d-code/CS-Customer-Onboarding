@@ -88,11 +88,13 @@ if st.button("🚀 Generate CMR Excel", use_container_width=True):
             output_file = populate_cmr_template(case, docs)
             st.success(f"✅ CMR Excel generated successfully: **{output_file}**")
 
-            log_audit(
+                        log_audit(
                 case_id=case_id,
-                action="CMR_GENERATED",
-                performed_by=st.session_state.get("username", "system"),
-                details=f"CMR file: {output_file}",
+                event_type="CMR_GENERATED",
+                actor_id=st.session_state.get("username", "system"),
+                old_val="",
+                new_val="",
+                comment=f"CMR file: {output_file}"
             )
 
             # Offer download
@@ -122,11 +124,13 @@ if st.button("📄 Generate Exception Report", use_container_width=True):
             report_file = generate_exception_report(case, docs)
             st.success(f"✅ Exception report generated: **{report_file}**")
 
-            log_audit(
+                        log_audit(
                 case_id=case_id,
-                action="EXCEPTION_REPORT_GENERATED",
-                performed_by=st.session_state.get("username", "system"),
-                details=f"Report file: {report_file}",
+                event_type="EXCEPTION_REPORT_GENERATED",
+                actor_id=st.session_state.get("username", "system"),
+                old_val="",
+                new_val="",
+                comment=f"Report file: {report_file}"
             )
 
             # Offer download

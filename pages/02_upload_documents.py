@@ -134,11 +134,13 @@ if uploaded_files:
                 extracted_fields=extracted,
             )
 
-            log_audit(
+                        log_audit(
                 case_id=case_id,
-                action="DOCUMENT_UPLOADED",
-                performed_by=st.session_state.get("username", "system"),
-                details=f"{uf.name} | type={detected_type} | doc_id={doc_id}",
+                event_type="DOCUMENT_UPLOADED",
+                actor_id=st.session_state.get("username", "system"),
+                old_val="",
+                new_val="",
+                comment=f"{uf.name} | type={detected_type} | doc_id={doc_id}"
             )
 
             results.append(
