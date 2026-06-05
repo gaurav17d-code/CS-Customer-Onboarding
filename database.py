@@ -293,3 +293,18 @@ add_document = save_document
 # update_case_status already exists, no alias needed
 get_audit_log = get_audit
 get_db_connection = get_conn
+
+def update_document_field(doc_id, field_name, field_value):
+    """
+    Update a specific field in the uploaded_document table.
+    If field_value is a dict, it will be JSON serialized.
+    """
+    conn = get_conn()
+    # Serialize dict/list values to JSON
+    if isinstance(field_value, (dict, list)):
+        field_value = json.dumps(field_value)
+    
+    query = f'UPDATE uploaded_document SET {field_name}=? WHERE document_id=?'
+    conn.execute(query, (field_value, doc_id))
+    conn.commit()
+    conn.close()
