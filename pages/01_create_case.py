@@ -3,10 +3,13 @@ import pandas as pd
 from datetime import datetime
 from database import (
     create_case, get_all_cases, get_case_by_id,
-    log_audit, get_db_connection
+    log_audit, get_db_connection, init_db
 )
 import json
 import uuid
+
+# Ensure database exists
+init_db()
 
 st.set_page_config(page_title="Create Case", page_icon="📋", layout="wide")
 
