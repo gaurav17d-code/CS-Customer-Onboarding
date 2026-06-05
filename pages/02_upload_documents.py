@@ -134,7 +134,7 @@ if uploaded_files:
                 extracted_fields=extracted,
             )
 
-                log_audit(
+            log_audit(
             case_id=case_id,
             event_type="DOCUMENT_UPLOADED",
             actor_id=st.session_state.get("username", "system"),
