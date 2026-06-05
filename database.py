@@ -5,6 +5,8 @@ from datetime import datetime
 import uuid
 
 DB_PATH = os.environ.get('DB_PATH', '/tmp/onboarding.db')
+# Ensure database directory exists
+os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
 def get_conn():
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
