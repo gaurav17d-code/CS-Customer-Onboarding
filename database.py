@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 import uuid
 
-DB_PATH = os.environ.get('DB_PATH', 'onboarding.db')
+DB_PATH = os.environ.get('DB_PATH', '/tmp/onboarding.db')
 
 def get_conn():
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
