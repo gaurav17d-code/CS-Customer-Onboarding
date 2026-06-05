@@ -104,7 +104,7 @@ if uploaded_files:
 
             # OCR
             try:
-            raw_text = extract_text_from_file(uf.getbuffer(), uf.name, str(case_id))
+                raw_text = extract_text_from_file(uf.getbuffer(), uf.name, str(case_id))
             except Exception as exc:
-            raw_text = ""
-            st.warning(f"OCR failed for {uf.name}: {exc}")
+                raw_text = ""
+                st.warning(f"OCR failed for {uf.name}: {exc}")
