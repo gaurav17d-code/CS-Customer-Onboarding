@@ -32,7 +32,7 @@ if not all_cases:
     st.stop()
 
 case_options = {
-    f"{c['case_id']} - {c['customer_name']} ({c['product_type']})": c['case_id']
+    f"{c['case_id']} - {c['provisional_customer_name']} ({c['product_type']})": c['case_id']
     for c in all_cases
 }
 
